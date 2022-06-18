@@ -24,6 +24,7 @@
 
 
     $( "#sidemenu li" ).addClass( "icon-box" );
+    // $('#sidemenu li a').before($('.header ul.icon-menu li.icon-box i'));
    // $( "#sidemenu li a" ).addClass( "nav-link" );
 
     //add active class when clicked on li

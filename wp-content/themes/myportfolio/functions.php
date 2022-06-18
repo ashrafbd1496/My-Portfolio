@@ -7,6 +7,8 @@
  * @package myportfolio
  */
 
+require get_template_directory() . '/inc/acf-for-menu.php';
+
 if (home_url() == 'http://localhost/myportfolio') {
 
     define('VERSION', time());
@@ -224,20 +226,19 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 //      return $classes;
 // }
 
-add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
-function my_wp_nav_menu_objects( $items, $args ) {	
-	// loop
-	foreach( $items as $item ) {	
-		// vars
-		
-		$icon = get_field('icon_menu_icon', $item);	
-
-		// append icon
-		if( $icon ) {		
-			 $item->title .= $icon;		
-			
-		}		
-	}
-	// return
-	return $items;
-}
+// add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+// function my_wp_nav_menu_objects( $items, $args ) {	
+// 	// loop
+// if (is_array($items) || is_object($items)){
+// 	foreach( $items as $item ) {	
+// 		// vars
+// 		$icon = get_field('icon_menu_icon', $item);	
+// 		// append icon
+// 		if( $icon ) {		
+// 			 $item->title .= $icon;		
+// 		}		
+// 	}
+// }
+// 	// return
+// 	return $items;
+// }
