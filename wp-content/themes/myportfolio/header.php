@@ -30,7 +30,6 @@
              'menu_class' => 'icon-menu d-none d-lg-block', 
              'menu_id'  => 'sidemenu',
              'fallback_cb'=>false,
-             
          ));
 
         ?>

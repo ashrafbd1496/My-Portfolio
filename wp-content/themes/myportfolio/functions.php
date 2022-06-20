@@ -8,6 +8,7 @@
  */
 
 require get_template_directory() . '/inc/acf-for-menu.php';
+require get_template_directory() . '/inc/acf-options.php';
 
 if (home_url() == 'http://localhost/myportfolio') {
 
@@ -154,21 +155,15 @@ function myportfolio_scripts() {
 	wp_enqueue_style( 'circle', get_template_directory_uri() .'/assets/css/circle.css','all');
 	wp_enqueue_style( 'revealator', get_template_directory_uri() .'/assets/css/fm.revealator.jquery.min.css', array('jquery'),'all' );
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() .'/assets/css/font-awesome.min.css','all');
-	wp_enqueue_style( 'template-style', get_template_directory_uri() .'/assets/css/style.css',array(),'_S_SVERSION', 'all');
-	//Css skin file
-	// wp_enqueue_style( 'skins', get_template_directory_uri() .'/assets/css/skins/yellow.css');
-	// //
-
-	wp_enqueue_style( 'myportfolio-theme-style', get_stylesheet_uri(), array(), VERSION, 'all');
+	wp_enqueue_style( 'skins', get_template_directory_uri() .'/assets/css/skins/yellow.css');
+	wp_enqueue_style( 'styleswitcher', get_template_directory_uri() .'/assets/css/styleswitcher.css');
+	wp_enqueue_style( 'template-style', get_template_directory_uri() .'/assets/css/style.css',array(),VERSION, 'all');
 	wp_style_add_data( 'myportfolio-rtl-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'myportfolio-theme-style', get_stylesheet_uri(), array(), VERSION, 'all');
 
 
 
-
-	//Jscripts
-	
-	
-	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-3.5.0.min.js',true);
+	//scripts
 	wp_enqueue_script( 'modernizor', get_template_directory_uri() . '/assets/js/modernizr.custom.js', array(), false );
 	wp_enqueue_script( 'styleswitcher', get_template_directory_uri() . '/assets/js/styleswitcher.js', array(), VERSION, true );
 	wp_enqueue_script( 'preloader', get_template_directory_uri() . '/assets/js/preloader.min.js', array(), VERSION, true );
@@ -178,11 +173,10 @@ function myportfolio_scripts() {
 	wp_enqueue_script( 'classie', get_template_directory_uri() . '/assets/js/classie.js', array(), VERSION, true );
 	wp_enqueue_script( 'gridgallery', get_template_directory_uri() . '/assets/js/cbpGridGallery.js', array(), VERSION, true );
 	wp_enqueue_script( 'jquery-hoverdir', get_template_directory_uri() . '/assets/js/jquery.hoverdir.js', array('jquery'), VERSION, true );
-	wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', array(), VERSION, true );
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery'), VERSION, true );
-	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), VERSION, true );
-
+	wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', array(), true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery'), true );
 	wp_enqueue_script( 'myportfolio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), true );
+	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -216,29 +210,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-
-// add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-// function special_nav_class($classes, $item){
-//      if( in_array('current-menu-item', $classes) ){
-//              $classes[] = 'active ';
-//      }
-//      return $classes;
-// }
-
-// add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
-// function my_wp_nav_menu_objects( $items, $args ) {	
-// 	// loop
-// if (is_array($items) || is_object($items)){
-// 	foreach( $items as $item ) {	
-// 		// vars
-// 		$icon = get_field('icon_menu_icon', $item);	
-// 		// append icon
-// 		if( $icon ) {		
-// 			 $item->title .= $icon;		
-// 		}		
-// 	}
-// }
-// 	// return
-// 	return $items;
-// }
