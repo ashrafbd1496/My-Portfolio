@@ -175,6 +175,7 @@ function myportfolio_scripts() {
 
 	//scripts
 	wp_enqueue_script( 'modernizor', get_template_directory_uri() . '/assets/js/modernizr.custom.js', array(), false );
+	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-3.5.0.min.js', array(), true );
 	wp_enqueue_script( 'styleswitcher', get_template_directory_uri() . '/assets/js/styleswitcher.js', array(), VERSION, true );
 	wp_enqueue_script( 'preloader', get_template_directory_uri() . '/assets/js/preloader.min.js', array(), VERSION, true );
 	wp_enqueue_script( 'imagesloaded', get_template_directory_uri() . '/assets/js/imagesloaded.pkgd.min.js', array(), VERSION, true );
