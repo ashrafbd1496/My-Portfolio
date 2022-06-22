@@ -16,7 +16,7 @@
 		$('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
 	}
 
-	$(document).ready(function() {
+	$(document).ready(function($) {
 
 		/* ----------------------------------------------------------- */
 		/*  STOP VIDEOS

@@ -1,6 +1,6 @@
 /**	STYLE SWITCHER
 *************************************************** **/
-jQuery(document).ready(function() {
+jQuery(document).ready(function($) {
 	"use strict";
 
     jQuery("#hideSwitcher, #showSwitcher").click(function () {
